@@ -24,7 +24,7 @@ public with sharing class Car_Exercise1 {
             + maximumSpeed + ', holds up to ' + passengers + ' passengers, and is ' 
             + color + '. The motor is on: ' + motorIsOn + '\n The radio is a ' 
             + radio.radioType + ' and the frequency is set to ' + radio.frequency 
-            + ' . The radio is on: ' + radio.isOn);
+            + '. The radio is on: ' + radio.isOn);
     }
     
     public void addSpeed(Integer speed){
@@ -42,5 +42,4 @@ public with sharing class Car_Exercise1 {
     public void assignRadio(Radio_Exercise1 radio){
         this.radio = radio;
     }
-
 }
