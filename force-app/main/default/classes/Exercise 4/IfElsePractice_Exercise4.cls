@@ -62,7 +62,3 @@ public with sharing class IfElsePractice_Exercise4 {
         }
     }
 }
-
-
-
-
