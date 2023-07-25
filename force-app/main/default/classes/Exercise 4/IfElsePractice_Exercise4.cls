@@ -9,7 +9,7 @@ public with sharing class IfElsePractice_Exercise4 {
             System.debug('zero');
         }
     }
-
+    
     public void hasNLength(String input, Integer n) {
         if(input.length() >= n){
             System.debug('valid');
