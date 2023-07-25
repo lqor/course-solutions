@@ -1,4 +1,4 @@
-public class AccountService_Exercise3 {
+public  with sharing  class AccountService_Exercise3 {
       
     public Account createAccount() {
         Account account = new Account();
