@@ -1,9 +1,9 @@
 public with sharing class IfElsePractice_Exercise4 {
     
-    public void printSign(Integer number) {
-        if(number < 0) {
+    public void printSign(Integer num) {
+        if(num < 0) {
             System.debug('negative');
-        } else if(number > 0) {
+        } else if(num > 0) {
             System.debug('positive');
         } else {
             System.debug('zero');
@@ -44,8 +44,8 @@ public with sharing class IfElsePractice_Exercise4 {
         } 
     }
 
-    public Boolean isEven(Integer number) {
-        if(Math.mod(number, 2) == 0) {
+    public Boolean isEven(Integer num) {
+        if(Math.mod(num, 2) == 0) {
             return true;
         } else {
             return false;
