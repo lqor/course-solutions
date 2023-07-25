@@ -11,10 +11,6 @@ public  with sharing  class AccountService_Exercise3 {
     }
 
     public void insertAccount(Account account) {
-        if(account == null) {
-            return;
-        }
-        
         insert account;
     }
 }
