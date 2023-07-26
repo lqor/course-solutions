@@ -10,6 +10,10 @@ public with sharing class ListsPractice_Exercise7 {
     }
 
     public Integer getSmallest(List<Integer> numbers) {
+        /* alternative solution */
+        //integerList.sort();
+        //return integerList.get(0);
+
         Integer smallest = numbers.get(0);
     
         for(Integer num : numbers) {
@@ -33,5 +37,9 @@ public with sharing class ListsPractice_Exercise7 {
 
     public Integer getRandomNumberInRange(Integer n, Integer m) {
         return n + (Integer)(Math.random() * ((m - n) + 1));
+    }
+
+    public String getRandomStringFromList(List<String> words) {
+        return words.get(getRandomNumberInRange(0, words.size() - 1));
     }
 }

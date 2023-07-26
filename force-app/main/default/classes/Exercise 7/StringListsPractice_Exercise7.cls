@@ -1,4 +1,5 @@
 public with sharing class StringListsPractice_Exercise7 {
+    
     public String concatenateList(List<String> words) { 
         String concatenatedWord = '';
 
@@ -9,7 +10,24 @@ public with sharing class StringListsPractice_Exercise7 {
         return concatenatedWord;
     }
 
-    public List<String> reverseWordsAndOrder(List<String> words) {
+    public List<String> reverseWordsAndOrder_v1(List<String> words) {
+        Loops_Exercise7 loops = new Loops_Exercise7();
+        List<String> reversedWords = new List<String>();
+        List<String> reversedOrderWords = new List<String>();
+        String reversedWord = '';
+
+        for(Integer i = words.size() - 1; i >= 0; i--){
+            reversedOrderWords.add(words.get(i));
+        }
+
+        for(String word : reversedOrderWords){
+            reversedWords.add(loops.reverseString(word));
+        }
+
+        return reversedWords;
+    }
+
+    public List<String> reverseWordsAndOrder_v2(List<String> words) {
         List<String> reversedWords = new List<String>();
         List<String> reversedOrderWords = new List<String>();
 
