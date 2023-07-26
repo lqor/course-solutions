@@ -10,25 +10,20 @@ public with sharing class AccountService_Exercise4 {
     }
 
     public Boolean isTestAccount(Account account) {
-        if(account.Name.contains('Test') || account.Name.contains('test')) {
-            return true;
-        } 
-
-        return false;
+        return account.Name != null && account.Name.toLowerCase().contains('Test');
     }
 
     public String printAccountTier(Account account) {
-        String tier = '';
+        String tier = 'VIP Tier';
         
-        if(account.AnnualRevenue == 0) {
+        if(account.AnnualRevenue <= 0) {
             tier = 'No Tier';
         } else if(account.AnnualRevenue < 50000) {
             tier = 'Silver Tier';
-        } else if(account.AnnualRevenue >= 50000 && account.AnnualRevenue < 300000) {
+        } else if(account.AnnualRevenue < 300000) {
             tier = 'Golden Tier';
-        } else if(account.AnnualRevenue >= 300000) {
-            tier = 'VIP Tier';
         }
+         
         System.debug(tier);
         
         return tier;

@@ -19,37 +19,19 @@ public with sharing class IfElsePractice_Exercise4 {
     }
 
     public Boolean hasExactLength(String input, Integer n) {
-        if(input.length() == n) {
-            return true;
-        } else {
-            return false;
-        }
+        return input.length() == n;
     }
 
     public Integer maximumNumber(Integer number1, Integer number2) {
-        if(number1 >= number2) {
-            return number1;
-        } else {
-            return number2;
-        }
+        return Math.max(number1, number2);
     }
 
     public Integer maximumNumber(Integer number1, Integer number2, Integer number3) {
-        if(number1 >= number2 && number1 >= number3) {
-            return number1;
-        } else if(number2 >= number1 && number2 >= number3) {
-            return number2;
-        } else  {
-            return number3;
-        } 
+        return Math.max(number1, Math.max(number2, number3));
     }
 
     public Boolean isEven(Integer num) {
-        if(Math.mod(num, 2) == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return Math.mod(num, 2) == 0;
     }
 
     public Decimal convertTemperature(Decimal temperature, String unit) {
