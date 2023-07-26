@@ -30,9 +30,7 @@ public with sharing class ListsPractice_Exercise6 {
     }
 
     public List<String> getFirstNCharacters(String inputString, Integer n) {
-        String returnString = inputString.left(n);
-      
-        return returnString.split('');
+        return inputString.left(n).split('');
     }
 
     public List<Integer> getListWithFiveRandomNumbers() {
