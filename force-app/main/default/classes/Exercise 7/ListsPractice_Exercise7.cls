@@ -1,4 +1,5 @@
 public with sharing class ListsPractice_Exercise7 {
+    
     public Integer sumList(List<Integer> numbers) {
         Integer sum = 0;
 
