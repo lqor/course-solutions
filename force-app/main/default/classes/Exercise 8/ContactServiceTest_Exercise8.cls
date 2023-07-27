@@ -1,5 +1,6 @@
 @isTest
 public with sharing class ContactServiceTest_Exercise8 {
+    
     @TestSetup
     static void setup() {
         Account testAccount = new Account(Name = 'Test Account');
@@ -14,6 +15,7 @@ public with sharing class ContactServiceTest_Exercise8 {
                 Phone = '123-456-789' + i
             ));
         }
+
         insert testContacts;
     }
 
