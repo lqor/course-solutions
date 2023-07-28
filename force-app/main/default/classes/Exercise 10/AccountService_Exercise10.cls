@@ -41,7 +41,7 @@ public with sharing class AccountService_Exercise10 {
     }
 
     public void updateAccountsWithContacts() {
-        List<Account> accounts = AccountQueries.getAllAccounts();
+        List<Account> accounts = AccountQueries.queryAllAccounts();
         Set<Id> accountIds = (new Map<Id, Account> (accounts)).keySet();
         
         List<Contact> relatedContacts = ContactQueries.queryContactsBySetOfAccountIds(accountIds);
