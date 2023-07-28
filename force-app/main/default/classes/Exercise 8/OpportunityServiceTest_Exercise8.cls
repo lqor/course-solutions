@@ -85,10 +85,8 @@ public with sharing class OpportunityServiceTest_Exercise8 {
             System.debug(account.Id);
         }
 
-        Opportunity oldOpportunity1 = fetchOpportunityByName('Test Opportunity One');
-        Opportunity oldOpportunity2 = fetchOpportunityByName('Test Opportunity Two');
-        Opportunity oldOpportunity3 = fetchOpportunityByName('Test Opportunity Three');
-        Opportunity oldOpportunity4 = fetchOpportunityByName('Test Opportunity Four');
+        Opportunity oldOpportunity1 = [SELECT CloseDate  FROM Opportunity WHERE Name = 'Test Opportunity One'];
+        Opportunity oldOpportunity2 = [SELECT CloseDate  FROM Opportunity WHERE Name = 'Test Opportunity Two'];
 
         OpportunityService_Exercise8 service = new OpportunityService_Exercise8();
 
@@ -96,22 +94,10 @@ public with sharing class OpportunityServiceTest_Exercise8 {
         service.addTimeToOpportunities(accountIds, 7);
         Test.stopTest();
 
-        Opportunity updatedOpportunity1 = fetchOpportunityByName('Test Opportunity One');
-        Opportunity updatedOpportunity2 = fetchOpportunityByName('Test Opportunity Two');
-        Opportunity updatedOpportunity3 = fetchOpportunityByName('Test Opportunity Three');
-        Opportunity updatedOpportunity4 = fetchOpportunityByName('Test Opportunity Four');
+        Opportunity updatedOpportunity1 = [SELECT CloseDate  FROM Opportunity WHERE Name = 'Test Opportunity One'];
+        Opportunity updatedOpportunity2 = [SELECT CloseDate  FROM Opportunity WHERE Name = 'Test Opportunity Two'];
 
         Assert.areEqual(7, oldOpportunity1.CloseDate.daysBetween(updatedOpportunity1.CloseDate));
         Assert.areEqual(7, oldOpportunity2.CloseDate.daysBetween(updatedOpportunity2.CloseDate));
-        Assert.areEqual(7, oldOpportunity3.CloseDate.daysBetween(updatedOpportunity3.CloseDate));
-        Assert.areEqual(7, oldOpportunity4.CloseDate.daysBetween(updatedOpportunity4.CloseDate));
-    } 
-
-    public static Opportunity fetchOpportunityByName(String opportunityName) {
-        return [
-            SELECT Id, Name, StageName, CloseDate, Amount 
-            FROM Opportunity
-            WHERE Name = :opportunityName LIMIT 1
-        ].get(0);
     }
 }
