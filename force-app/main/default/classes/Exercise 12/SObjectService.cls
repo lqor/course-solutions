@@ -38,15 +38,3 @@ public abstract class SObjectService {
         return filteredRecords;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
