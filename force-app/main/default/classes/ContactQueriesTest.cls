@@ -10,33 +10,34 @@ public with sharing class ContactQueriesTest {
             Account acc = new Account();
             acc.Name = 'Test Account ' + i;
             
-            accounts.add(acc);
+            accounts.add(acc); 
+        }
 
+        insert accounts;
+
+        for (Account acc : accounts) {
             for (Integer j = 0; j < 2; j++) {
                 Contact con = new Contact();
                 con.AccountId = acc.Id;
                 con.Phone = '123-456-789' + j;
                 con.LastName = 'Test Contact ' + j;
-
+    
                 contacts.add(con);
             }
         }
-
-        insert accounts;
+        
         insert contacts;
     }
 
     @isTest
     static void queryContactsByAccountId_UnitTest() {
-        List<Account> accounts = [SELECT Id FROM Account LIMIT 5];
+        Id accountId = [SELECT Id FROM Account WHERE Name = 'Test Account 1'].get(0).Id;
 
-        for (Account acc : accounts) {
-            List<Contact> queriedContacts = ContactQueries.queryContactsByAccountId(acc.Id);
+        Test.startTest();
+        List<Contact> queriedContacts = ContactQueries.queryContactsByAccountId(accountId);
+        Test.stopTest();
 
-            for (Contact con : queriedContacts) {
-                Assert.areEqual(acc.Id, con.AccountId, 'Contact with incorrect AccountId found.');
-            }
-        }
+        Assert.areEqual(2, queriedContacts.size(), '2 Contacts must have such Account Id.');
     }
 
     @isTest
@@ -55,7 +56,7 @@ public with sharing class ContactQueriesTest {
         Test.stopTest();
         
         for (Contact con : queriedContacts) {
-            Assert.areEqual(accountIds.contains(con.AccountId), 'Contact with incorrect AccountId found.');
+            Assert.areEqual(true, accountIds.contains(con.AccountId), 'Contact with incorrect AccountId found.');
         }
     }
 }
