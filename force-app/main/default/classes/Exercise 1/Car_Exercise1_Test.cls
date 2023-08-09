@@ -27,12 +27,14 @@ public with sharing class Car_Exercise1_Test {
     @isTest
     static void addSpeed_UnitTest1() {
         Car_Exercise1 car = new Car_Exercise1();
+
+        Integer expectedMaximumSpeed = car.maximumSpeed + 30;
         
         Test.startTest();
-        car.addSpeed(50);
+        car.addSpeed(30);
         Test.stopTest();
         
-        Assert.areEqual(50, car.maximumSpeed);
+        Assert.areEqual(expectedMaximumSpeed, car.maximumSpeed);
     }
 
     @isTest
