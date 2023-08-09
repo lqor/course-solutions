@@ -29,9 +29,9 @@ public with sharing class AccountServiceTest_Exercise10 {
         Map<String, List<Account>> resultIndustryMap = accountService.createIndustryMap(testAccounts);
         Test.stopTest();
 
-        System.assertEquals(2, resultIndustryMap.size());
-        System.assertEquals(2, resultIndustryMap.get('Industry A').size());
-        System.assertEquals(1, resultIndustryMap.get('Industry B').size());
+        Assert.areEqual(2, resultIndustryMap.size());
+        Assert.areEqual(2, resultIndustryMap.get('Industry A').size());
+        Assert.areEqual(1, resultIndustryMap.get('Industry B').size());
     }
 
     @isTest
@@ -65,8 +65,8 @@ public with sharing class AccountServiceTest_Exercise10 {
         Account updatedAcc1 = [SELECT Id, Name, Description FROM Account WHERE Id = :acc1.Id];
         Account updatedAcc2 = [SELECT Id, Name, Description FROM Account WHERE Id = :acc2.Id];
 
-        System.assertEquals(true, updatedAcc1.Description.contains('Contact 1'));
-        System.assertEquals(true, updatedAcc2.Description.contains('Contact 2'));
+        Assert.areEqual(true, updatedAcc1.Description.contains('Contact 1'));
+        Assert.areEqual(true, updatedAcc2.Description.contains('Contact 2'));
     }
 }
 
