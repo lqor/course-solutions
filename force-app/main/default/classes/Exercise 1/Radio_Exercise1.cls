@@ -1,4 +1,5 @@
 public with sharing class Radio_Exercise1 {
+    
     public Decimal frequency;
     public String radioType;
     public Boolean isOn;

@@ -14,8 +14,10 @@ public abstract class SObjectService {
     */
     public List<Sobject> filterRecords(List<SObject> records, Map<String, Object> filters) {
         List<SObject> filteredRecords = new List<SObject>();
+
         for (SObject record : records) {
             Boolean recordMatchesFilters = true;
+
             for(String fieldName : filters.keySet()) {
                 Object filterFieldValue = filters.get(fieldName);
                 Boolean isString = filterFieldValue instanceof String;
@@ -23,6 +25,7 @@ public abstract class SObjectService {
                                    filterFieldValue instanceof Double ||
                                    filterFieldValue instanceof Decimal ||
                                    filterFieldValue instanceof Long;
+
                 if(isString && (record.get(fieldName) != (String) filterFieldValue) ) {
                     recordMatchesFilters = false;
                     break;
@@ -31,10 +34,12 @@ public abstract class SObjectService {
                     break;
                 }
             }
+            
             if(recordMatchesFilters) {
                 filteredRecords.add(record);
             }
         }
+
         return filteredRecords;
     }
 }
