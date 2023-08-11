@@ -95,7 +95,7 @@ public class Company_Test {
         hrDep.supervisor = hrSupervisor;
         hrDep.contactPerson = hrContactPerson;
 
-        Employee ceo = new Employee('Bill', 'Wood', 50000);
+        Employee ceo = new Employee('Bill', 'Wood', 500000);
 
         Company company = new Company('Amazon', ceo, salesDep, devDep, hrDep);
         
