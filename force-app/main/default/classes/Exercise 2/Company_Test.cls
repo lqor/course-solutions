@@ -1,5 +1,5 @@
 @isTest
-public class Company_Test {
+public with sharing class Company_Test {
 
     @isTest
     static void constructor_UnitTest() {
