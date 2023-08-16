@@ -52,10 +52,10 @@ public with sharing class Loops_Exercise5_Test {
         Integer sum100 = loopsExercise.calculateSumAllNumbers(100);
         Test.stopTest();
 
-        System.assertEquals(0, sum0);
-        System.assertEquals(1, sum1);
-        System.assertEquals(55, sum10);
-        System.assertEquals(5050, sum100);
+        Assert.areEqual(0, sum0);
+        Assert.areEqual(1, sum1);
+        Assert.areEqual(55, sum10);
+        Assert.areEqual(5050, sum100);
     }
 
     @isTest
