@@ -10,7 +10,7 @@ public with sharing class AccountService_Exercise4 {
     }
 
     public Boolean isTestAccount(Account account) {
-        return account.Name != null && account.Name.toLowerCase().contains('Test');
+        return account.Name != null && account.Name.toLowerCase().contains('test');
     }
 
     public String printAccountTier(Account account) {
