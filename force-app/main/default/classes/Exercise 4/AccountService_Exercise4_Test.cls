@@ -69,10 +69,33 @@ public with sharing class AccountService_Exercise4_Test {
 
     @isTest
     static void testPrintAccountTier_UnitTest() {
-        Account noTierAccount = [SELECT Name, Type, AnnualRevenue FROM Account WHERE AnnualRevenue <= 0 LIMIT 1];
-        Account silverTierAccount = [SELECT Name, Type, AnnualRevenue FROM Account WHERE AnnualRevenue > 0 AND AnnualRevenue < 50000 LIMIT 1];
-        Account goldenTierAccount = [SELECT Name, Type, AnnualRevenue FROM Account WHERE AnnualRevenue >= 50000 AND AnnualRevenue < 300000 LIMIT 1];
-        Account vipTierAccount = [SELECT Name, Type, AnnualRevenue FROM Account WHERE AnnualRevenue >= 300000 LIMIT 1];
+        Account noTierAccount = [
+            SELECT Name, Type, AnnualRevenue 
+            FROM Account 
+            WHERE AnnualRevenue <= 0 
+            LIMIT 1
+        ];
+
+        Account silverTierAccount = [
+            SELECT Name, Type, AnnualRevenue 
+            FROM Account 
+            WHERE AnnualRevenue > 0 AND AnnualRevenue < 50000 
+            LIMIT 1
+        ];
+
+        Account goldenTierAccount = [
+            SELECT Name, Type, AnnualRevenue 
+            FROM Account 
+            WHERE AnnualRevenue >= 50000 AND AnnualRevenue < 300000 
+            LIMIT 1
+        ];
+
+        Account vipTierAccount = [
+            SELECT Name, Type, AnnualRevenue 
+            FROM Account 
+            WHERE AnnualRevenue >= 300000 
+            LIMIT 1
+        ];
 
         AccountService_Exercise4 accountService = new AccountService_Exercise4();
 

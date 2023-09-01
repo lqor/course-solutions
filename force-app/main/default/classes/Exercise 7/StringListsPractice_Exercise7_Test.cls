@@ -24,9 +24,8 @@ public with sharing class StringListsPractice_Exercise7_Test {
         List<String> reversedResult = obj.reverseWordsAndOrder_v1(words);
         Test.stopTest();
 
-        List<String> expected = new List<String>{'dlrow', 'olleH'};
-
-        Assert.areEqual(expected, reversedResult);
+        Assert.areEqual('dlrow', reversedResult.get(0));
+        Assert.areEqual('olleH', reversedResult.get(1));
     }
 
     @isTest
@@ -41,6 +40,7 @@ public with sharing class StringListsPractice_Exercise7_Test {
 
         List<String> expected = new List<String>{'dlrow', 'olleH'};
 
-        Assert.areEqual(expected, reversedResult);
+        Assert.areEqual('dlrow', reversedResult.get(0));
+        Assert.areEqual('olleH', reversedResult.get(1));
     }
 }

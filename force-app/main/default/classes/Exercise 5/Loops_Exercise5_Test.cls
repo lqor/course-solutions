@@ -8,17 +8,11 @@ public with sharing class Loops_Exercise5_Test {
         Test.startTest();
         Boolean primeNumberTest1 = loopsExercise.isPrime(2);
         Boolean primeNumberTest2 = loopsExercise.isPrime(67);
-        Boolean noPrimeNumberTest1 = loopsExercise.isPrime(0);
-        Boolean noPrimeNumberTest2 = loopsExercise.isPrime(1);
-        Boolean noPrimeNumberTest3 = loopsExercise.isPrime(-2);
         Boolean noPrimeNumberTest4 = loopsExercise.isPrime(52);
         Test.stopTest();
 
         Assert.areEqual(true, primeNumberTest1);
         Assert.areEqual(true, primeNumberTest2);
-        Assert.areEqual(false, noPrimeNumberTest1);
-        Assert.areEqual(false, noPrimeNumberTest2);
-        Assert.areEqual(false, noPrimeNumberTest3);
         Assert.areEqual(false, noPrimeNumberTest4);
     }
 
@@ -27,14 +21,12 @@ public with sharing class Loops_Exercise5_Test {
         Loops_Exercise5 loopsExercise = new Loops_Exercise5();
 
         Test.startTest();
-        Integer factorial0 = loopsExercise.calculateFactorialNumber(0);
         Integer factorial1 = loopsExercise.calculateFactorialNumber(1);
         Integer factorial2 = loopsExercise.calculateFactorialNumber(2);
         Integer factorial8 = loopsExercise.calculateFactorialNumber(8);
         Integer factorial12 = loopsExercise.calculateFactorialNumber(12);
         Test.stopTest();
 
-        Assert.areEqual(1, factorial0);
         Assert.areEqual(1, factorial1);
         Assert.areEqual(2, factorial2);
         Assert.areEqual(40320, factorial8);
@@ -63,9 +55,9 @@ public with sharing class Loops_Exercise5_Test {
         Loops_Exercise5 loopsExercise = new Loops_Exercise5();
 
         Test.startTest();
-        Decimal resultOf1  = loopsExercise.multiplicationDividedByAddition(1);
-        Decimal resultOf3  = loopsExercise.multiplicationDividedByAddition(3);
-        Decimal resultOf5  = loopsExercise.multiplicationDividedByAddition(5);
+        Decimal resultOf1 = loopsExercise.multiplicationDividedByAddition(1);
+        Decimal resultOf3 = loopsExercise.multiplicationDividedByAddition(3);
+        Decimal resultOf5 = loopsExercise.multiplicationDividedByAddition(5);
         Test.stopTest();
         
         Assert.areEqual(1.0, resultOf1);

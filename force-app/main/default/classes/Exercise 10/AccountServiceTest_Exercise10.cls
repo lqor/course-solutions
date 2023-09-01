@@ -69,4 +69,3 @@ public with sharing class AccountServiceTest_Exercise10 {
         Assert.areEqual(true, updatedAcc2.Description.contains('Contact 2'));
     }
 }
-

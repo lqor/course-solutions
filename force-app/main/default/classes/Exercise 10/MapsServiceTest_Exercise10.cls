@@ -10,6 +10,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             'four' => 4,
             'five' => 5
         };
+
         Map<String, Integer> inputMap2 = new Map<String, Integer> {
             'six' => 6,
             'seven' => 7,
@@ -17,7 +18,9 @@ public with sharing class MapsServiceTest_Exercise10 {
             'nine' => 9,
             'one' => 100
         };
+
         Integer expectedSize = 9;
+
         Integer expectedValueForKeyOne = 101;
 
         MapsService_Exercise10 mapsService = new MapsService_Exercise10();
@@ -39,6 +42,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             'four' => 4,
             'nine' => 90
         };
+
         Map<String, Integer> inputMap2 = new Map<String, Integer> {
             'six' => 6,
             'seven' => 7,
@@ -46,7 +50,9 @@ public with sharing class MapsServiceTest_Exercise10 {
             'nine' => 9,
             'one' => 100
         };
+
         List<String> expectedKeys = new List<String>();
+
         Set<String> inputMap1Keys = inputMap1.keySet();
         
         for(String key : inputMap1Keys) {
@@ -62,6 +68,7 @@ public with sharing class MapsServiceTest_Exercise10 {
         Test.stopTest();
 
         Assert.areEqual(expectedKeys.size(), intersectingKeys.size());
+
         for(String expectedKey : expectedKeys) {
             Assert.isTrue(intersectingKeys.contains(expectedKey));
         }       
@@ -70,6 +77,7 @@ public with sharing class MapsServiceTest_Exercise10 {
     @IsTest
     static void filterByValue_UnitTest() {
         Map<String, Integer> expectedValues = new Map<String, Integer>();
+
         Map<String, Integer> inputMap = new Map<String, Integer> {
             'ten' => 10, 
             'twenty' => 20, 
@@ -77,7 +85,9 @@ public with sharing class MapsServiceTest_Exercise10 {
             'forty' => 40, 
             'fifty' => 50
         };
+
         Set<String> inputKeys = inputMap.keySet();
+
         Integer threshold = 30;
         
         for(String inputKey : inputKeys) {
@@ -93,6 +103,7 @@ public with sharing class MapsServiceTest_Exercise10 {
         Test.stopTest();
 
         Assert.areEqual(expectedValues.size(), filteredValues.size());
+         
         Set<String> expectedKeys = expectedValues.keySet();
         for(String expectedKey : expectedKeys) {
             Assert.areEqual(expectedValues.get(expectedKey), filteredValues.get(expectedKey));
@@ -230,6 +241,7 @@ public with sharing class MapsServiceTest_Exercise10 {
         Test.stopTest();
 
         Assert.areEqual(expectedValues.size(), remainingValues.size());
+        
         Set<String> expectedKeys = expectedValues.keySet();
         for(String expectedKey : expectedKeys) {
             Assert.areEqual(expectedValues.get(expectedKey), remainingValues.get(expectedKey));
