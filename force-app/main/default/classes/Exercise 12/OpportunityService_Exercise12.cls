@@ -1,6 +1,6 @@
 public with sharing class OpportunityService_Exercise12 extends SObjectService implements SObjectServiceInterface {
     
-    public override void updateObject(SObject record) {
+    public void updateObject(SObject record) {
         if(record == null || !(record instanceof Opportunity)) {
             return;
         }
@@ -10,17 +10,7 @@ public with sharing class OpportunityService_Exercise12 extends SObjectService i
         }
     }
 
-    public override void insertObject(SObject record) {
-        if(record == null || !(record instanceof Opportunity)) {
-            return;
-        }
-        
-        if(validateObject(record)) {
-            insert record;
-        }
-    }
-
-    public Boolean validateObject(SObject record) {
+    public override Boolean validateObject(SObject record) {
         if(record instanceof Opportunity) {
             Opportunity opportunity = (Opportunity) record;
             
