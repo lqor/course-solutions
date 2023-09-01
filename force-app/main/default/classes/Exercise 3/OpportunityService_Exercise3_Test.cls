@@ -58,8 +58,17 @@ public with sharing class OpportunityService_Exercise3_Test {
 
     @isTest
     static void softMerge_UnitTest() {
-        Opportunity opp1 = [SELECT AccountId, Amount, CloseDate, Name, Probability, StageName FROM Opportunity WHERE Name = 'Test Opportunity 1' LIMIT 1];
-        Opportunity opp2 = [SELECT AccountId, Amount, CloseDate, Name, Probability, StageName FROM Opportunity WHERE Name = 'Test Opportunity 2' LIMIT 1];
+        Opportunity opp1 = [
+            SELECT AccountId, Amount, CloseDate, Name, Probability, StageName 
+            FROM Opportunity 
+            WHERE Name = 'Test Opportunity 1' LIMIT 1
+        ];
+        
+        Opportunity opp2 = [
+            SELECT AccountId, Amount, CloseDate, Name, Probability, StageName 
+            FROM Opportunity 
+            WHERE Name = 'Test Opportunity 2' LIMIT 1
+        ];
         
         OpportunityService_Exercise3 opportunityService = new OpportunityService_Exercise3();
 
@@ -108,7 +117,11 @@ public with sharing class OpportunityService_Exercise3_Test {
         opportunityService.insertOpportunity(testOpportunity);
         Test.stopTest();
         
-        List<Opportunity> insertedOpps = [SELECT Id, Name, Amount, CloseDate, StageName FROM Opportunity WHERE Name = 'Test Opportunity 3'];
+        List<Opportunity> insertedOpps = [
+            SELECT Id, Name, Amount, CloseDate, StageName 
+            FROM Opportunity 
+            WHERE Id = :testOpportunity.Id
+        ];
 
         Assert.areNotEqual(null, insertedOpps);
         Assert.areEqual(1, insertedOpps.size());
