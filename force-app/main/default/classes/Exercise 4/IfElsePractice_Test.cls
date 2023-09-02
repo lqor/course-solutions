@@ -1,9 +1,9 @@
 @isTest
-public with sharing class IfElsePractice_Exercise4_Test {
+public with sharing class IfElsePractice_Test {
 
     @isTest
     static void hasExactLength_UnitTest() {
-        IfElsePractice_Exercise4 exercise4 = new IfElsePractice_Exercise4();
+        IfElsePractice exercise4 = new IfElsePractice();
         
         Test.startTest();
         Boolean exactLengthTest = exercise4.hasExactLength('abcd', 4);
@@ -16,7 +16,7 @@ public with sharing class IfElsePractice_Exercise4_Test {
 
     @isTest
     static void maximumNumber_UnitTest1() {
-        IfElsePractice_Exercise4 exercise4 = new IfElsePractice_Exercise4();
+        IfElsePractice exercise4 = new IfElsePractice();
         
         Test.startTest();
         Integer maximumOf3And5 = exercise4.maximumNumber(3, 5);
@@ -35,7 +35,7 @@ public with sharing class IfElsePractice_Exercise4_Test {
 
     @isTest
     static void maximumNumber_UnitTest2() {
-        IfElsePractice_Exercise4 exercise4 = new IfElsePractice_Exercise4();
+        IfElsePractice exercise4 = new IfElsePractice();
         
         Test.startTest();
         Integer maximumOf3And5And7 = exercise4.maximumNumber(3, 5, 7);
@@ -54,7 +54,7 @@ public with sharing class IfElsePractice_Exercise4_Test {
 
     @isTest
     static void isEven_UnitTest() {
-        IfElsePractice_Exercise4 exercise4 = new IfElsePractice_Exercise4();
+        IfElsePractice exercise4 = new IfElsePractice();
         
         Test.startTest();
         Boolean evenTest = exercise4.isEven(4);
@@ -67,7 +67,7 @@ public with sharing class IfElsePractice_Exercise4_Test {
 
     @isTest
     static void convertTemperature_UnitTest() {
-        IfElsePractice_Exercise4 exercise4 = new IfElsePractice_Exercise4();
+        IfElsePractice exercise4 = new IfElsePractice();
 
         Test.startTest();
         Decimal celsiusToFahrenheitResult = exercise4.convertTemperature(12.56, 'C');

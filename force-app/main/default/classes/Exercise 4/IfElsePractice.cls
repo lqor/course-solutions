@@ -1,4 +1,4 @@
-public with sharing class IfElsePractice_Exercise4 {
+public with sharing class IfElsePractice {
     
     public void printSign(Integer num) {
         if(num < 0) {

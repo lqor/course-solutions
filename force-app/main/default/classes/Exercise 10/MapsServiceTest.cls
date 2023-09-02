@@ -1,5 +1,5 @@
 @IsTest
-public with sharing class MapsServiceTest_Exercise10 {
+public with sharing class MapsServiceTest {
     
     @IsTest
     static void mergeMaps_UnitTest() {
@@ -23,7 +23,7 @@ public with sharing class MapsServiceTest_Exercise10 {
 
         Integer expectedValueForKeyOne = 101;
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         Map<String, Integer> mergedMap = mapsService.mergeMaps(inputMap1, inputMap2);
@@ -61,7 +61,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             } 
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         List<String> intersectingKeys = mapsService.intersectKeys(inputMap1, inputMap2);
@@ -96,7 +96,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             } 
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         Map<String, Integer> filteredValues = mapsService.filterByValue(inputMap, threshold);
@@ -132,7 +132,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             } 
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         List<String> values = mapsService.getValuesByKey(inputMap, keys);
@@ -151,7 +151,7 @@ public with sharing class MapsServiceTest_Exercise10 {
         List<String> words = new List<String> (sentence.split(' '));
         String expectedWord = 'the';
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         String mostCommonWord = mapsService.findMostCommon(words);
@@ -174,7 +174,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             }
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         Map<String, Integer> wordCount = mapsService.countWords(words);
@@ -204,7 +204,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             }
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         String keyValueInMap = mapsService.findKeyByValue(inputMap, targetValue1);
@@ -234,7 +234,7 @@ public with sharing class MapsServiceTest_Exercise10 {
             }
         }
 
-        MapsService_Exercise10 mapsService = new MapsService_Exercise10();
+        MapsService mapsService = new MapsService();
 
         Test.startTest();
         Map<String, Integer> remainingValues = mapsService.removeEntriesByKey(inputMap, keysToRemove);

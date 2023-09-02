@@ -1,9 +1,9 @@
 @isTest
-public with sharing class StringListsPractice_Exercise7_Test {
+public with sharing class StringListsPractice_Test {
 
     @isTest
     static void concatenateList_UnitTest() {
-        StringListsPractice_Exercise7 obj = new StringListsPractice_Exercise7();
+        StringListsPractice obj = new StringListsPractice();
 
         List<String> words = new List<String>{'Hello', ' ', 'world', '!'};
 
@@ -18,7 +18,7 @@ public with sharing class StringListsPractice_Exercise7_Test {
     static void reverseWordsAndOrder_v1_UnitTest() {
         List<String> words = new List<String>{'Hello', 'world'};
 
-        StringListsPractice_Exercise7 obj = new StringListsPractice_Exercise7();
+        StringListsPractice obj = new StringListsPractice();
 
         Test.startTest();
         List<String> reversedResult = obj.reverseWordsAndOrder_v1(words);
@@ -32,7 +32,7 @@ public with sharing class StringListsPractice_Exercise7_Test {
     static void reverseWordsAndOrder_v2_UnitTest() {
         List<String> words = new List<String>{'Hello', 'world'};
         
-        StringListsPractice_Exercise7 obj = new StringListsPractice_Exercise7();
+        StringListsPractice obj = new StringListsPractice();
 
         Test.startTest();
         List<String> reversedResult = obj.reverseWordsAndOrder_v2(words);

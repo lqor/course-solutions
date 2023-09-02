@@ -1,4 +1,4 @@
-public with sharing class StringListsPractice_Exercise7 {
+public with sharing class StringListsPractice {
     
     public String concatenateList(List<String> words) { 
         String concatenatedWord = '';

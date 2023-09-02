@@ -1,4 +1,4 @@
-public with sharing class MapsService_Exercise10 {
+public with sharing class MapsService {
     
     public Map<String, Integer> mergeMaps(Map<String, Integer> map1, Map<String, Integer> map2) {
         Map<String, Integer> mergedMap = map1.clone();
