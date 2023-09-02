@@ -6,14 +6,14 @@ public with sharing class AccountServiceTest_Exercise10 {
         List<Account> testAccounts = new List<Account>();
         testAccounts.add(
             new Account(
-                Name='Test Account 1', 
-                Industry='Industry A'
+                Name = 'Test Account 1', 
+                Industry = 'Industry A'
             )
         );
         testAccounts.add(
             new Account(
-                Name='Test Account 2', 
-                Industry='Industry B'
+                Name = 'Test Account 2', 
+                Industry = 'Industry B'
             )
         );
         testAccounts.add(
@@ -37,21 +37,21 @@ public with sharing class AccountServiceTest_Exercise10 {
     @isTest
     static void updateAccountsWithContacts_UnitTest() {
         Account acc1 = new Account(
-            Name='Account 1'
+            Name = 'Account 1'
         );
         Account acc2 = new Account(
-            Name='Account 2'
+            Name = 'Account 2'
         );
 
         insert new List<Account>{acc1, acc2};
 
         Contact con1 = new Contact(
-            AccountId=acc1.Id, 
-            LastName='Contact 1'
+            AccountId = acc1.Id, 
+            LastName = 'Contact 1'
         );
         Contact con2 = new Contact(
-            AccountId=acc2.Id, 
-            LastName='Contact 2'
+            AccountId = acc2.Id, 
+            LastName = 'Contact 2'
         );
 
         insert new List<Contact>{con1, con2};
